@@ -1,0 +1,19 @@
+import random
+n=1000000                          #Experiment to be run for n times
+a=0                                #first die face value
+b=0                                #second die face value
+c=0                                #counter if games ends with 5
+d=0                                #counter if games ends with 7
+for x in range(1,n):               #experiment to be run n number of times
+    while((a+b)!=5 and (a+b)!=7):  #each experiment will stop if sum i
+        a=random.randint(1,6)      #1st die rolled
+        b=random.randint(1,6)      #2nd die rolled
+        if(a+b)==5:                 
+            c+=1                   #counter increased if game ended with 5 
+        elif (a+b)==7:
+            d+=1                   #counter increased if game ended with 7
+    a=0
+    b=0                            #values reset 
+prob=c/n                           #prob = counter for ending in 5 divided by total no of exps
+print(prob)
+    
